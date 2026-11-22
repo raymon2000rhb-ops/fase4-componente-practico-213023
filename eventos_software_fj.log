@@ -1,0 +1,26 @@
+[2026-11-22 22:16:26] [INFO] Sistema de registro de logs inicializado correctamente.
+[2026-11-22 22:16:26] [INFO] Cliente registrado exitosamente: Cliente [CLI-001] - Laura Gómez | Correo: laura.gomez@empresa.com | Tel: 3001234567
+[2026-11-22 22:16:26] [AUDIT] Intento de registro de cliente procesado (ID: CLI-001).
+[2026-11-22 22:16:26] [INFO] Cliente registrado exitosamente: Cliente [CLI-002] - Carlos Mendoza | Correo: cmendoza@techcol.co | Tel: 3159876543
+[2026-11-22 22:16:26] [AUDIT] Intento de registro de cliente procesado (ID: CLI-002).
+[2026-11-22 22:16:26] [ERROR] Origen: GestorSoftwareFJ.registrar_cliente | Tipo: DatoInvalidoError | Detalle: [ERR-VAL-001] Correo electrónico inválido: 'andres_sin_arroba.com'.
+[2026-11-22 22:16:26] [AUDIT] Intento de registro de cliente procesado (ID: CLI-003).
+[2026-11-22 22:16:26] [ERROR] Origen: GestorSoftwareFJ.registrar_cliente | Tipo: DatoInvalidoError | Detalle: [ERR-VAL-001] Ya existe un cliente registrado con el ID 'CLI-001'.
+[2026-11-22 22:16:26] [AUDIT] Intento de registro de cliente procesado (ID: CLI-001).
+[2026-11-22 22:16:26] [INFO] Servicio agregado al catálogo: Servicio [SRV-001] Sala Ejecutiva Norte | Tarifa/h: $80,000.00 | Estado: Disponible | Tipo: Sala (Capacidad: 25 personas)
+[2026-11-22 22:16:26] [INFO] Servicio agregado al catálogo: Servicio [SRV-002] Workstation Dell Precision | Tarifa/h: $45,000.00 | Estado: Disponible | Tipo: Alquiler Equipos (3 unds)
+[2026-11-22 22:16:26] [INFO] Servicio agregado al catálogo: Servicio [SRV-003] Arquitectura Cloud AWS | Tarifa/h: $120,000.00 | Estado: Disponible | Tipo: Asesoría (Cloud Computing)
+[2026-11-22 22:16:26] [INFO] Servicio agregado al catálogo: Servicio [SRV-004] Auditorio Mantenimiento | Tarifa/h: $150,000.00 | Estado: No disponible | Tipo: Sala (Capacidad: 40 personas)
+[2026-11-22 22:16:26] [ERROR] Origen: main.Operacion6 | Tipo: DatoInvalidoError | Detalle: [ERR-VAL-001] La tarifa base por hora debe ser mayor a 0 (recibido: -50000.0).
+[2026-11-22 22:16:26] [INFO] Reserva creada: Reserva [RES-001] | Cliente: Laura Gómez | Servicio: Sala Ejecutiva Norte | Duración: 4h | Total (IVA inc.): $418,880.00 | Estado: PENDIENTE
+[2026-11-22 22:16:26] [INFO] Reserva creada: Reserva [RES-002] | Cliente: Carlos Mendoza | Servicio: Workstation Dell Precision | Duración: 5h | Total (IVA inc.): $743,750.00 | Estado: PENDIENTE
+[2026-11-22 22:16:26] [INFO] Reserva creada: Reserva [RES-003] | Cliente: Laura Gómez | Servicio: Arquitectura Cloud AWS | Duración: 3h | Total (IVA inc.): $458,150.00 | Estado: PENDIENTE
+[2026-11-22 22:16:26] [ERROR] Origen: GestorSoftwareFJ.crear_reserva | Tipo: ServicioNoDisponibleError | Detalle: [ERR-SRV-002] No se puede reservar 'Auditorio Mantenimiento' porque no está disponible.
+[2026-11-22 22:16:26] [ERROR] Origen: GestorSoftwareFJ.crear_reserva | Tipo: ReservaInvalidaError | Detalle: [ERR-RES-004] Fallo al calcular el costo de la reserva 'RES-005' para el servicio 'Workstation Dell Precision'. | Causa original: ReservaInvalidaError: [ERR-RES-004] El alquiler de equipos exige mínimo 2 horas (solicitado: 1h).
+[2026-11-22 22:16:26] [INFO] Acción 'confirmar' ejecutada sobre RES-001. Nuevo estado: CONFIRMADA
+[2026-11-22 22:16:26] [INFO] Facturación generada para RES-001: $418,880.00
+[2026-11-22 22:16:26] [INFO] Acción 'procesar' ejecutada sobre RES-001. Nuevo estado: PROCESADA
+[2026-11-22 22:16:26] [ERROR] Origen: GestorSoftwareFJ.ejecutar_accion_reserva(cancelar) | Tipo: OperacionNoPermitidaError | Detalle: [ERR-OPR-003] No se puede cancelar la reserva 'RES-001' porque ya fue PROCESADA.
+[2026-11-22 22:16:26] [ERROR] Origen: GestorSoftwareFJ.ejecutar_accion_reserva(procesar) | Tipo: OperacionNoPermitidaError | Detalle: [ERR-OPR-003] Solo se pueden procesar reservas CONFIRMADAS. Estado actual de 'RES-002': 'PENDIENTE'.
+[2026-11-22 22:16:26] [INFO] Acción 'confirmar' ejecutada sobre RES-003. Nuevo estado: CONFIRMADA
+[2026-11-22 22:16:26] [INFO] Acción 'cancelar' ejecutada sobre RES-003. Nuevo estado: CANCELADA
